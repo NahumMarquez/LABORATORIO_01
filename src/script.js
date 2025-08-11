@@ -12,7 +12,7 @@ class Calculadora {
         this.valorPrevioTextElement = valorPrevioTextElement
         this.valorActualTextElement = valorActualTextElement
         this.ultimoFueIgual = false;   // 3. Si lo que se presiona despues de igual es un numero entonces que borre el resultado anterior e inicie una nueva operacion
-        this.historialOperacion = ''; // para mostrar en el display superior 
+        this.historialOperacion = ''; // 4. Muestre la operacion completa en el display superior
         // Inicializa la calculadora limpiando todos los valores
         this.borrarTodo()
     }
@@ -80,7 +80,8 @@ calcular() {
     const valor_1 = parseFloat(this.valorPrevio);
     const valor_2 = parseFloat(this.valorActual);
 
-    if (!isNaN(valor_1) && !isNaN(valor_2)) {     // 2- Funcionabilidad de boton de porcentaje
+    // 2- Funcionabilidad de boton de porcentaje-------------------------------
+    if (!isNaN(valor_1) && !isNaN(valor_2)) {     
             this.historialOperacion = `${this.obtenerNumero(this.valorPrevio)} ${this.operacion} ${this.obtenerNumero(this.valorActual)}`;
         }
 
